@@ -1,0 +1,22 @@
+{
+  "name": "bootstrap_white",
+  "version": "0.0.0",
+  "authors": [
+    "fuggfuggfugg <fuggfuggfugg@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "font-awesome": "fontawesome#~4.4.0"
+  }
+}
