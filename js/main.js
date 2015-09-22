@@ -250,6 +250,16 @@ function LoadAjaxContent(url){
 		success: function(data) {
 			$('#ajax-content').html(data);
 			$('.preloader').hide();
+			// update header
+			var el = $("[href='" + url + "']")
+			if (el.hasClass("active-parent active") == false) {
+				$(".ajax-link").removeClass("active-parent active")
+				el.addClass("active-parent active")
+				el.parents(".dropdown").find(".dropdown-toggle").addClass("active-parent active")
+				el.parents(".dropdown-menu").css("display","block")
+			};
+
+			$("#page-header h4").html(el.text().trim())
 		},
 		error: function (jqXHR, textStatus, errorThrown) {
 			alert(errorThrown);
@@ -1566,7 +1576,7 @@ function TestTable1(){
 	$('#datatable-1').dataTable( {
 		"aaSorting": [[ 0, "asc" ]],
 		"sDom": "<'box-content'<'col-sm-6'f><'col-sm-6 text-right'l><'clearfix'>>rt<'box-content'<'col-sm-6'i><'col-sm-6 text-right'p><'clearfix'>>",
-		"sPaginationType": "bootstrap",
+		// "sPaginationType": "bootstrap",
 		"oLanguage": {
 			"sSearch": "",
 			"sLengthMenu": '_MENU_'
